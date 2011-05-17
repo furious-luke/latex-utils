@@ -1,0 +1,23 @@
+\ProvidesPackage{procaptions}
+
+\usepackage[dvipsnames,usenames]{color}
+\usepackage{courier}
+\usepackage{caption}
+
+% Setup a white caption font and a 'procaption' format.
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{procaption}{
+  \colorbox[cmyk]{0.43, 0.35, 0.35, 0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}
+}
+
+% Setup a new command to apply this caption to another environment.
+\newcommand{\procaptionsetup}[1]{
+  \captionsetup[#1]{
+    format=listing,
+    labelfont=white,
+    textfont=white,
+    singlelinecheck=false,
+    margin=0pt,
+    font={bf, footnotesize}
+  }
+}

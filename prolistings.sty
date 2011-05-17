@@ -1,9 +1,7 @@
 \ProvidesPackage{prolistings}
 
-\usepackage[dvipsnames,usenames]{color}
+\usepackage{procaptions}
 \usepackage{listings}
-\usepackage{courier}
-\usepackage{caption}
 
 % Setup a nice source code environment. Use listings, caption and courier to
 % produce a professional looking environment.
@@ -28,15 +26,4 @@
 \lstloadlanguages{c}
 
 % Setup the caption for the above enrionment.
-\DeclareCaptionFont{white}{\color{white}}
-\DeclareCaptionFormat{listing}{
-  \colorbox[cmyk]{0.43, 0.35, 0.35, 0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}
-}
-\captionsetup[lstlisting]{
-  format=listing,
-  labelfont=white,
-  textfont=white,
-  singlelinecheck=false,
-  margin=0pt,
-  font={bf, footnotesize}
-}
+\procaptionsetup{lstlisting}
